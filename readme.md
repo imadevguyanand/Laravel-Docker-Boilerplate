@@ -60,7 +60,7 @@ https://docs.docker.com/desktop/windows/install/
 6. Once the service has been deployed exec into the container by entering:
 
    ```
-   docker exec container_name_or_id -it bash
+   docker exec it container_name_or_id bash
    ```
 
 7. Change the path to the root of the aplication by running:
