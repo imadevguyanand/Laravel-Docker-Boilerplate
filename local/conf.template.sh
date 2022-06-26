@@ -6,7 +6,7 @@ export HOST_ADDRESS=
 # The port you want the app to run on your system
 export APP_PORT_PREFIX=
 
-# Directory you want the logs, sessions, and media to go in
+# Directory you want the logs, sessions, cache , views or any data which you want to write to the files
 export MOUNT_DIR= 
 
 # Path to this project root

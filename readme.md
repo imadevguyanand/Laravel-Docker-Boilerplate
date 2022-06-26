@@ -27,7 +27,7 @@ https://docs.docker.com/desktop/windows/install/
 
    ```
    # Local Variables
-   export HOST_ADDRESS= Should either be "docker.for.win.localhost" or "docker.for.mac.localhost" depending on what system you are using
+   export HOST_ADDRESS= Should either be docker.for.win.localhost or "docker.for.mac.localhost" depending on what system you are using
 
    # The port you want the app to run on your system
    export APP_PORT_PREFIX= the port your application will be on is APP_PORT_PREFIX + 080
@@ -49,7 +49,7 @@ https://docs.docker.com/desktop/windows/install/
 
    This will create the docker environment and it will take several minutes to run. This command will build the docker image and deploy the stack
 
-5. Make sure the container is running by executing the command
+5. Make sure the container is running by executing the command. Copy the container ID which you need it in the next step
 
    ```
    docker ps
@@ -60,19 +60,13 @@ https://docs.docker.com/desktop/windows/install/
 6. Once the service has been deployed exec into the container by entering:
 
    ```
-   docker exec it container_name_or_id bash
+   docker exec -it <container_name_or_id> bash
    ```
 
-7. Change the path to the root of the aplication by running:
-
-   ```
-   cd /var/www/html
-   ```
-
-8. Install all the packages the application needs. This will take few minutes
+7. Install all the packages the application needs. This will take few minutes
 
    ```
    composer install
    ```
 
-9. Navigate to http://localhost:{APP_PORT_PREFIX}
+8. Navigate to http://localhost:{APP_PORT_PREFIX}

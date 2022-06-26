@@ -18,6 +18,8 @@ export APP_URL=http://localhost:${APP_PORT_PREFIX}080/
 
 # DataBase
 export DB_CONNECTION=mysql
+
+# Volume mounts to write the data to avoid the container bloating
 export LOGS=$MOUNT_DIR/$APP_NAME/logs
 export LARAVEL_STORAGE=$MOUNT_DIR/$APP_NAME/storage
 export PHP_SESSIONS=$MOUNT_DIR/$APP_NAME/sessions
@@ -47,6 +49,7 @@ docker build -t "${APP_NAME}/${IMAGE_NAME}" -f local/Dockerfile.dev .
 # Create directories
 mkdir -p "${LOGS}" "${LARAVEL_STORAGE}" "${PHP_SESSIONS}" 
 
+# make it a executable file
 chmod u+x local/docker-compose.dev.yml.sh
 
 echo ${MOUNT_DIR}/${APP_NAME}/docker-compose.dev.yml
